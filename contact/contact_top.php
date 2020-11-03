@@ -21,11 +21,6 @@ if(isset($_POST['confirm'])){ //確認ボタンを押してポストしたもの
       $errorMessage .= "タイトルが入力されていません。<br>";
       $error_flg = true;
     }
-    //電話番号の必須入力チェック
-    if ($_POST['formTel'] === ''){
-      $errorMessage .= "電話番号が入力されていません。<br>";
-      $error_flg = true;
-    }
     //内容の必須入力チェック
     if ($_POST['formContent'] === ''){
         $errorMessage .= "お問い合わせ内容が入力されていません。<br>";
@@ -51,9 +46,8 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'rewrite'){
 <meta charset="UTF-8">
 <title>お問い合わせ</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="../css/style3.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style3.css">
 </head>
 
 <body>
@@ -61,7 +55,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'rewrite'){
         <div class="head">
         <h1>CONTACT</h1>
         </div>
-      <div class=form-wrapper>
+      <div class="form-wrapper">
         <h2 class="sample-subtitle">お問い合わせフォーム</h2>
         
         <p style="color: red"><?php echo $errorMessage ?></p>  <!-- エラーメッセージ表示 -->
@@ -80,11 +74,6 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'rewrite'){
             <label for="formSubject">タイトル <span class="text-danger">*</span></label>
             <input type="text" class="form-control" id="formSubject" name="formSubject"
             value="<?php if(isset($_POST['formSubject'])) echo htmlspecialchars($_POST['formSubject']); ?>">
-          </div>
-          <div class="form-group">
-            <label for="formTel">電話番号 <span class="text-danger">*</span></label>
-            <input type="tel" class="form-control" id="formTel" name="formTel"
-            value="<?php if(isset($_POST['formTel'])) echo htmlspecialchars($_POST['formTel']); ?>">
           </div>
           <div class="form-group">
             <label for="formContent">お問い合わせ内容 <span class="text-danger">*</span></label>

@@ -3,7 +3,6 @@ session_start();  //セッションを使う
 $formName = htmlspecialchars($_SESSION['inquiry']['formName'],ENT_QUOTES, 'UTF-8');
 $formMail = htmlspecialchars($_SESSION['inquiry']['formEmail1'],ENT_QUOTES, 'UTF-8');
 $formSubject = htmlspecialchars($_SESSION['inquiry']['formSubject'],ENT_QUOTES, 'UTF-8');
-$formTel = htmlspecialchars($_SESSION['inquiry']['formTel'],ENT_QUOTES, 'UTF-8');
 $formContent = htmlspecialchars($_SESSION['inquiry']['formContent'],ENT_QUOTES, 'UTF-8');
 ?>
 
@@ -40,18 +39,15 @@ $formContent = htmlspecialchars($_SESSION['inquiry']['formContent'],ENT_QUOTES, 
             <p id="contact-subject"><?php echo  $formSubject ?></p>
           </div>
           <div class="form-group">
-            <label for="formTel">電話番号 <span class="text-danger">*</span></label><br>
-            <p id="contact-tel"><?php echo  $formTel ?></p>
-          </div>
-          <div class="form-group">
             <label for="formContent">お問い合わせ内容 <span class="text-danger">*</span></label><br>
             <p id="contact-message"><?php echo  $formContent ?></p>
           </div>
           <button type="submit" name="submit" class="btn btn-danger btn-block">送信</button>
-        </form>
-
           <div><button class="btn btn-secondary btn-block mt-2"><a href="contact_top.php?action=rewrite" class="text-light">書き直す</a></button>
         </div>
+        </form>
+
+          
       </div>
     </div>
     <script type="text/javascript" src="./contact.js"></script>

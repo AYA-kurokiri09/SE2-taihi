@@ -76,7 +76,7 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
       rel="stylesheet"
     />
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/style_answer.css">
 </head>
 <body id="page-top">
   <!----------------------------------------------->
@@ -101,25 +101,42 @@ $_SESSION['rireki']['kekka'][$monme]=$hantei;
     <div class="subheader">
       <h2>JavaScript - 選択式</h2>
     </div>
-    <h1>回答</h1>
-    <h2><?php echo$hantei;?></h2>
-    <dl class="grayback" id="answer">
-    <dt>第<?php print$monme;?>問の正解</dt>
-    <!--<dd>問題No.<?php print$id;?></dd>-->
-    <dd><?php print$question;?></dd>
-    <dd>正しい解答：<?php print$answer;?></dd>
-    <dd>解説：<?php print$explanation;?></dd>
-    <br>
-    <dd>もっと詳しく：<?php echo"<p><a href='$url' target='_blank' rel='noopener noreferrer'>$url</a></p>";?></dd>
-    </dl>
-    <?php
-    if($monme>=10){
-      echo"<p><a href='result.php'>結果ページへ</a></p>";
-    }else{
-      echo"<p><a href='index.php'>次の問題へ</a></p>";
-    }
-  ?>
-  <p>現在、<?php echo $monme;?>問中<?php echo $ok_count;?>問正解しています</p>
+    <section class="questions">
+      <h2 class="main-title">Test your English</h2>
+      <br>
+      <div class="questions__sentence">
+        <strong class="questions__number"><?php print$monme;?></strong>
+        <span><?php print$question;?></span>
+      </div>
+      <div class="questions__item">
+        <p><span class="labeling">判定</span><br>
+        <div class="sentence answers__item">
+          <?php echo"<div class='hantei'>$hantei</div>";?></p>
+        </div>
+        <br>
+        <!--<dd>問題No.<?php print$id;?></dd>-->
+        <p><span class="labeling">正解</span><br>
+        <div class="sentence answers__item">
+          <?php echo"<div class='answer'>$answer</div>";?></p>
+          <?php echo"<div class='explanation'>$explanation</div>";?>
+        </div>
+        <br>
+        <p><span class="labeling">詳細</span>
+        <div class="sentence answers__item">
+          <?php echo"<div class='explanation'><a href='$url' target='_blank' rel='noopener noreferrer'>$url</a></div>";?>
+          </p>
+        </div>
+      </div>
+     
+      <?php
+      if($monme>=10){
+        echo"<button class='questions__btn slide-bg'><a href='result.php'>結果ページへ</a></button>";
+      }else{
+        echo"<button class='questions__btn slide-bg'><a href='index.php'>次の問題へ</a></button>";
+      }
+      ?>
+      <!--<p>現在、<?php echo $monme;?>問中<?php echo $ok_count;?>問正解しています</p>-->
+    </section> 
   <!----------------------------------------------->
   <footer id="footer" class="bg-light py-5">
       <!--display-4→display-5、py-5→py-1に変更-->
