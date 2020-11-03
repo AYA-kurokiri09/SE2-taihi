@@ -47,7 +47,7 @@
     <header>
       <nav>
         <div class="container navbar navbar-expand-lg navbar-light">
-          <a class="navbar-brand mr-auto" href="index.html">
+          <a class="navbar-brand mr-auto" href="index.php">
             <img src="img/SE2.png" alt="サイト名" height="70"/>
           </a>
           <a href="register.php" class="btn btn-secondary btn-lg mr-1 text-white">新規登録</a>
