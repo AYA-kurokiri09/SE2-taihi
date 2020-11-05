@@ -2,9 +2,8 @@
 session_start();
 
 //最初に1〜100から10個の数字を選んだ乱数配列を生成し、その数字に対応した問題No.($id)の情報を正解としてセット。
-//現在、一時的に1〜10の範囲からの選択としています。
 if(!isset($_SESSION['rand'])){
-  $rand=range(1,20);
+  $rand=range(1,50);
   shuffle($rand);
   for($i=0;$i<10;$i++){
     $_SESSION['rand'] = $rand;
