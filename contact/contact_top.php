@@ -4,7 +4,7 @@ session_start();  //セッションを使う
  
 //入力チェック
 $errorMessage = '';
-if(isset($_POST['confirm'])){ //確認ボタンを押してポストしたものなら
+if(isset($_POST['confirm'])){ //確認ボタンを押してポストしたものなら、
     $error_flg = false;
     //名前の必須入力チェック
     if ($_POST['formName'] === ''){
