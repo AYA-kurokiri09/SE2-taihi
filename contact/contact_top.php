@@ -4,7 +4,7 @@ session_start();  //セッションを使う
  
 //入力チェック
 $errorMessage = '';
-if(isset($_POST['confirm'])){ //確認ボタンを押してポストしたものなら、
+if(isset($_POST['confirm'])){ //確認ボタンを押してポストしたものなら
     $error_flg = false;
     //名前の必須入力チェック
     if ($_POST['formName'] === ''){
@@ -84,6 +84,7 @@ if (isset($_REQUEST['action']) && $_REQUEST['action'] === 'rewrite'){
           <div class="form-group">
           <input type="submit" class="btn btn-danger btn-block" name="confirm" value="送信する">
           </div>
+         //ここに「戻る」ボタンを入れる
 
         </form>
       </div>
